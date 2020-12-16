@@ -29,7 +29,7 @@ def segmenter(raw):
     Args:
         raw: a string
     Return:
-        a segmented string
+        print out a segmented string
     """
     print(raw.replace(". ", ".\n"))
 
