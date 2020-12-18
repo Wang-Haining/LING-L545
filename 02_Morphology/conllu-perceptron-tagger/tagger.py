@@ -37,6 +37,7 @@ class PerceptronTagger():
 		#s_split = SentenceTokenizer().tokenise if tokenise else lambda t: t.split('\n')
 		#w_split = WordTokenizer().tokenise if tokenise else lambda s: s.split()
 
+		# out = ''
 		reading = True
 		sentence = []
 		line = corpus.readline()
@@ -60,7 +61,9 @@ class PerceptronTagger():
 				# print out the tokens and their tags
 				for words in sentence:	
 					print('\t'.join(words))
+					# out += '\t'.join(words)
 				print()
+				# out += '\n'
 				sentence = []	
 			elif line == '':
 				# we reached the end of the input
@@ -68,6 +71,7 @@ class PerceptronTagger():
 			elif line[0] == '#':
 				# line is a comment line
 				print(line.strip())
+				# out += line.strip()
 				line = corpus.readline()
 				continue
 			else:
@@ -78,7 +82,8 @@ class PerceptronTagger():
 			# read the next line
 			line = corpus.readline()
 
-		return 
+		# return out
+		return
 
 	def train(self, sentences, save_loc=None, nr_iter=5):
 		'''Train a model from sentences, and save it at ``save_loc``. ``nr_iter``
@@ -227,11 +232,11 @@ def trainer(corpus_file, model_file):
 		sentences.append(sentence)
 
 	t.train(sentences, save_loc=model_file, nr_iter=5)
-
-if len(sys.argv) == 3 and sys.argv[1] == '-t':
-	trainer(sys.stdin, sys.argv[2])	
-elif len(sys.argv) == 2:
-	tagger(sys.stdin, sys.argv[1])
-else:
-	print('tagger.py [-t] model.dat');
-	sys.exit(-1)
+#
+# if len(sys.argv) == 3 and sys.argv[1] == '-t':
+# 	trainer(sys.stdin, sys.argv[2])
+# elif len(sys.argv) == 2:
+# 	tagger(sys.stdin, sys.argv[1])
+# else:
+# 	print('tagger.py [-t] model.dat');
+# 	sys.exit(-1)

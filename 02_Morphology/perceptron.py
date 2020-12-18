@@ -6,9 +6,7 @@ from collections import defaultdict
 import pickle
 import random
 
-# cat ../UD_Chinese-GSDSimp/zh_gsdsimp-ud-train.conllu | python3 tagger.py -t zh-ud.dat
-# cat ../UD_Chinese-GSDSimp/zh_gsdsimp-ud-test.conllu | python3 tagger.py zh-ud.dat > zh-ud-test.out
-# python3 ../evaluation_script/conll17_ud_eval.py --verbose ../UD_Chinese-GSDSimp/zh_gsdsimp-ud-test.conllu zh-ud-test.out
+
 
 class AveragedPerceptron(object):
 
