@@ -207,7 +207,7 @@ class PerceptronTagger():
 		add('i+1 suffix2', context[i + 1][-2:])
 		add('i+1 suffix1', context[i + 1][-1:])
 		# add in glove features
-		for j in range(0, 3):
+		for j in range(0, 1):
 			add('company '+ str(j), glove_util(context, i, j))
 
 		# print(word, '|||', features)

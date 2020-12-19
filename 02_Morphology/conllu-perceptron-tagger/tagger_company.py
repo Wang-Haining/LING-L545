@@ -196,7 +196,7 @@ class PerceptronTagger():
 		add('i+1 suffix', context[i+1][-3:])
 		add('i+2 word', context[i+2])
 		# add in glove features
-		for j in range(0, 3):
+		for j in range(0, 1):
 			add('company '+ str(j), glove_util(context, i, j))
 
 		# print(word, '|||', features)
@@ -252,15 +252,13 @@ def trainer(corpus_file, model_file):
 	t.train(sentences, save_loc=model_file, nr_iter=5)
 
 
-######################################
-#
-# if len(sys.argv) == 3 and sys.argv[1] == '-t':
-# 	trainer(sys.stdin, sys.argv[2])
-# elif len(sys.argv) == 2:
-# 	tagger(sys.stdin, sys.argv[1])
-# else:
-# 	print('tagger.py [-t] model.dat');
-# 	sys.exit(-1)
+if len(sys.argv) == 3 and sys.argv[1] == '-t':
+	trainer(sys.stdin, sys.argv[2])
+elif len(sys.argv) == 2:
+	tagger(sys.stdin, sys.argv[1])
+else:
+	print('tagger.py [-t] model.dat');
+	sys.exit(-1)
 
 
 

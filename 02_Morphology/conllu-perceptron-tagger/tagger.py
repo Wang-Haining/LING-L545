@@ -232,7 +232,7 @@ def trainer(corpus_file, model_file):
 		sentences.append(sentence)
 
 	t.train(sentences, save_loc=model_file, nr_iter=5)
-#
+
 # if len(sys.argv) == 3 and sys.argv[1] == '-t':
 # 	trainer(sys.stdin, sys.argv[2])
 # elif len(sys.argv) == 2:
