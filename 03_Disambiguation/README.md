@@ -1,3 +1,3 @@
-Relative word order experiment is in the ipynb file.
+The main file is in `Improve perceptron tagger.ipynb`.
 
 Thanks.
