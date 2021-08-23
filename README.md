@@ -2,4 +2,4 @@
 
 http://cl.indiana.edu/~ftyers/courses/2020/Autumn/L-545/
 
-Repo for LING-L535 Haining Wang.
+Repo for LING-L545 Haining Wang.
